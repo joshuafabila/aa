@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\AdminDashboardController;
 
@@ -28,3 +29,6 @@ Route::get('/admin/users', [AdminDashboardController::class, 'manageUsers'])->na
 Route::get('/admin/programs', [AdminDashboardController::class, 'managePrograms'])->name('admin.programs');
 Route::get('/admin/trainers', [AdminDashboardController::class, 'manageTrainers'])->name('admin.trainers');
 Route::get('/admin/schedule', [AdminDashboardController::class, 'manageSchedule'])->name('admin.schedule');
+
+Route::get('/login',[LoginController::class,'index'])->name('login');
+Route::post('/login',[LoginController::class,'login'])->name('login.submit');
